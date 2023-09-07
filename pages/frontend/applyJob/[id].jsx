@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import GridWithBackground from "@/components/background";
 
 export default function ApplyJob() {
   const router = useRouter();
@@ -177,6 +178,7 @@ export default function ApplyJob() {
         </form>
       </div>
       <ToastContainer />
+      <GridWithBackground />
     </>
   );
 }

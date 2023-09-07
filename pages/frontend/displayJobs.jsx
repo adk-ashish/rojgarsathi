@@ -1,6 +1,7 @@
 import NavBar from "@/components/NavBar";
 import React from "react";
 import { useSelector } from "react-redux";
+import GridWithBackground from "@/components/background";
 
 import JobsCard from "@/components/JobsCard";
 
@@ -25,6 +26,7 @@ export default function DisplayJobs() {
 
           {/* map */}
         </div>
+        <GridWithBackground />
       </div>
     </>
   );

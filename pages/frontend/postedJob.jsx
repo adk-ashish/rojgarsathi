@@ -9,6 +9,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import useSWR from "swr";
+import GridWithBackground from "@/components/background";
 
 export default function PostedJobs() {
   const router = useRouter();
@@ -52,6 +53,7 @@ export default function PostedJobs() {
                 <JobsCard key={index} job={job} posted={true} />
               ))}
             </div>
+            <GridWithBackground />
           </div>
         </>
       )}

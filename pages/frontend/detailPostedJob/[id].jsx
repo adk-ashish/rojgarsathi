@@ -8,6 +8,7 @@ import { InfinitySpin } from "react-loader-spinner";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import useSWR from "swr";
+import GridWithBackground from "@/components/background";
 
 export default function PostedJobsDetails() {
   const router = useRouter();
@@ -51,6 +52,7 @@ export default function PostedJobsDetails() {
             <div className="w-full h-full px-4 py-4 flex  overflow-y-auto  items-start justify-center flex-wrap">
               <ApplicationsDataTable application={application} />
             </div>
+            <GridWithBackground />
           </div>
         </>
       )}

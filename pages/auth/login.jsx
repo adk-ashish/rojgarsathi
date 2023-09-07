@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { useDispatch } from "react-redux";
 import { setUserData } from "@/Utils/UserSlice";
 import NavBar from "@/components/NavBar";
+import GridWithBackground from "@/components/background";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -137,9 +138,19 @@ export default function Login() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                  className="w-full flex items-center justify-center text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 >
-                  Sign in
+                  Sign In{" "}
+                  <div style={{ paddingLeft: "10px" }}>
+                    {" "}
+                    {/* Add padding to this container */}
+                    <img
+                      src="/logo2.png" // Provide the path to your SVG file in the public directory
+                      alt="Logo"
+                      width={40} // Set the desired width
+                      height={40} // Set the desired height
+                    />
+                  </div>
                 </button>
                 <p className="text-sm font-light ">
                   Don’t have an account yet?{" "}
@@ -155,6 +166,7 @@ export default function Login() {
           </div>
         </div>
         <ToastContainer />
+        <GridWithBackground />
       </div>
     </>
   );

@@ -6,6 +6,7 @@ import { register_me } from "@/Services/auth";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import NavBar from "@/components/NavBar";
+import GridWithBackground from "@/components/background";
 
 export default function Register() {
   const router = useRouter();
@@ -154,9 +155,19 @@ export default function Register() {
 
                 <button
                   type="submit"
-                  className="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                  className="w-full flex items-center justify-center text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
                 >
                   Sign Up
+                  <div style={{ paddingLeft: "10px" }}>
+                    {" "}
+                    {/* Add padding to this container */}
+                    <img
+                      src="/logo2.png" // Provide the path to your SVG file in the public directory
+                      alt="Logo"
+                      width={40} // Set the desired width
+                      height={40} // Set the desired height
+                    />
+                  </div>
                 </button>
                 <p className="text-sm font-light text-gray-500 ">
                   Already have an account{" "}
@@ -173,6 +184,7 @@ export default function Register() {
         </div>
 
         <ToastContainer />
+        <GridWithBackground />
       </div>
     </>
   );

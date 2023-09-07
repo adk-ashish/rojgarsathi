@@ -6,6 +6,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { post_job } from "@/Services/job";
 import { useRouter } from "next/router";
+import GridWithBackground from "@/components/background";
 
 export default function PostAJob() {
   const user = useSelector((state) => state.User.userData);
@@ -296,11 +297,22 @@ export default function PostAJob() {
           </div>
           <button
             type="submit"
-            className="w-full py-2 rounded bg-indigo-600 text-white font-semibold tracking-widest"
+            className="w-full flex items-center justify-center py-2 rounded bg-indigo-600 text-white font-semibold tracking-widest text-center "
           >
-            Submit
+            Submit{" "}
+            <div style={{ paddingLeft: "10px" }}>
+              {" "}
+              {/* Add padding to this container */}
+              <img
+                src="/logo2.png" // Provide the path to your SVG file in the public directory
+                alt="Logo"
+                width={40} // Set the desired width
+                height={40} // Set the desired height
+              />
+            </div>
           </button>
         </form>
+        <GridWithBackground />
       </div>
       <ToastContainer />
     </>

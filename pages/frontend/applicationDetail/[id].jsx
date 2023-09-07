@@ -7,6 +7,7 @@ import NavBar from "@/components/NavBar";
 import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
+import GridWithBackground from "@/components/background";
 
 export default function ApplicationsDetail() {
   const router = useRouter();
@@ -59,6 +60,7 @@ export default function ApplicationsDetail() {
                 </p>
               </div>
             </div>
+            <GridWithBackground />
           </div>
         </>
       )}

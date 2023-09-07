@@ -87,8 +87,16 @@ export default function NavBar() {
         } px-6 h-20 bg-indigo-600 text-white flex items-center justify-between fixed top-0 left-0 z-50`}
       >
         <div className="px-2 h-full flex items-center justify-center">
+          <div style={{ color: "white" }}>
+            <img
+              src="/logo2.png" // Provide the path to your SVG file in the public directory
+              alt="Logo"
+              width={80} // Set the desired width
+              height={80} // Set the desired height
+            />
+          </div>
           <p className="uppercase font-semibold tracking-widest text-lg">
-            JOB-PORTAL
+            Rojgar Sathi
           </p>
         </div>
         <div className="px-2 h-full hidden items-center justify-center lg:flex">
