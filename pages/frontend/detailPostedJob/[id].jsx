@@ -1,6 +1,7 @@
 import { get_all_applications } from '@/Services/job';
 import ApplicationsDataTable from '@/components/ApplicationsDataTable'
 import NavBar from '@/components/NavBar'
+import GridWithBackground from '@/components/background';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
@@ -53,6 +54,7 @@ export default function PostedJobsDetails() {
                             <div className='w-full h-full px-4 py-4 flex  overflow-y-auto  items-start justify-center flex-wrap'>
                                 <ApplicationsDataTable application={application}  />
                             </div>
+                            <GridWithBackground/>
                         </div>
                     </>
                 )

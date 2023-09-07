@@ -18,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { InfinitySpin } from 'react-loader-spinner'
 import useSWR from 'swr'
 import { book_mark_job } from '@/Services/job/bookmark'
+import GridWithBackground from '@/components/background'
 
 
 
@@ -228,6 +229,7 @@ export default function JobDetails() {
                                     {/* card */}
                                 </div>
                             </div>
+                            <GridWithBackground/>
                         </div>
                     </>
                 )

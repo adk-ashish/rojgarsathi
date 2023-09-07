@@ -1,3 +1,4 @@
+import GridWithBackground from '@/components/background';
 import NavBar from '@/components/NavBar';
 import { apply_job } from '@/Services/job';
 import { useRouter } from 'next/router';
@@ -124,6 +125,7 @@ export default function ApplyJob() {
 
                     <button type="submit" className='w-full py-2 rounded bg-indigo-600 text-white font-semibold tracking-widest'>Submit</button>
                 </form>
+                <GridWithBackground/>
             </div>
             <ToastContainer />
         </>

@@ -3,6 +3,7 @@ import React from 'react'
 import {  useSelector } from 'react-redux'
 
 import JobsCard from '@/components/JobsCard'
+import GridWithBackground from '@/components/background';
 
 
 
@@ -29,6 +30,7 @@ export default function DisplayJobs() {
 
                     {/* map */}
                 </div>
+                <GridWithBackground/>
             </div>
         </>
 

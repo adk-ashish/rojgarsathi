@@ -7,6 +7,7 @@ import NavBar from '@/components/NavBar';
 import { toast } from 'react-toastify';
 import Cookies from 'js-cookie';
 import { useSelector } from 'react-redux';
+import GridWithBackground from '@/components/background';
 
 
 
@@ -65,6 +66,7 @@ export default function ApplicationsDetail() {
                                     <p className='text-sm px-2 uppercase font-extrabold'>{data?.data?.status}</p>
                                 </div>
                             </div>
+                            <GridWithBackground/>
                         </div>
                        
 

@@ -1,4 +1,5 @@
 import AppliedJobDataTable from '@/components/AppliedJobDataTable'
+import GridWithBackground from '@/components/background'
 import NavBar from '@/components/NavBar'
 import SavedJobDataTable from '@/components/SavedJobDataTable'
 import { get_my_applied_job } from '@/Services/job'
@@ -93,6 +94,7 @@ export default function Dashboard() {
                   showTable === 'savedJobs' ? <SavedJobDataTable /> : <AppliedJobDataTable />
                 }
               </div>
+              <GridWithBackground/>
             </div>
           </>
         )
