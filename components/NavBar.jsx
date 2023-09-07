@@ -98,7 +98,7 @@ export default function NavBar() {
           >
             Home
           </Link>
-          {user?.role === "employee" && (
+          {user?.role === "employer" && (
             <Link
               href={"/frontend/postAJob"}
               className="px-3 mx-4 text-base font-medium transition-all duration-700 hover:translate-y-2 uppercase"
@@ -112,7 +112,7 @@ export default function NavBar() {
           >
             View Jobs
           </Link>
-          {user?.role === "employee" && (
+          {user?.role === "employer" && (
             <Link
               href={"/frontend/postedJob"}
               className="px-3 mx-4 text-base font-medium transition-all duration-700 hover:translate-y-2 uppercase"

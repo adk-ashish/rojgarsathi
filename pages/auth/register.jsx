@@ -16,7 +16,11 @@ export default function Register() {
     }
   }, [router]);
 
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    role: "user",
+  });
   const [error, setError] = useState({ email: "", password: "", name: "" });
 
   const handleSubmit = async (e) => {
@@ -125,6 +129,27 @@ export default function Register() {
                   {error.password && (
                     <p className="text-sm text-red-500">{error.password}</p>
                   )}
+                </div>
+
+                <div className="text-left">
+                  <label
+                    htmlFor="userRole"
+                    className="block mb-2 text-sm font-medium text-gray-900"
+                  >
+                    User Role
+                  </label>
+                  <select
+                    onChange={(e) =>
+                      setFormData({ ...formData, role: e.target.value })
+                    }
+                    value={formData.role}
+                    name="role"
+                    id="role"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2.5"
+                  >
+                    <option value="user">Job Seeker</option>
+                    <option value="employer">Employer</option>
+                  </select>
                 </div>
 
                 <button
