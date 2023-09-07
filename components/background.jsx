@@ -2,7 +2,7 @@ import React from "react";
 
 const GridWithBackground = () => {
   return (
-    <div className="fixed inset-0 flex flex-wrap">
+    <div className="fixed inset-0 flex flex-wrap z-[-1]">
       {Array.from({ length: 100 }, (_, index) => (
         <div key={index} className="w-10v h-10v relative">
           <img

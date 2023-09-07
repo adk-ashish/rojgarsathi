@@ -167,3 +167,16 @@ export const create_cv = async (formData) => {
     console.log("error in creating CV (service) => ", error);
   }
 };
+
+export const get_cv = async (id) => {
+  try {
+    const res = await fetch(`/api/job/getCV?id=${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+    });
+    const data = res.json();
+    return data;
+  } catch (error) {
+    console.log("error in   getting CV of specified user (service) => ", error);
+  }
+};
