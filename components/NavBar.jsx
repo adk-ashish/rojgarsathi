@@ -128,6 +128,14 @@ export default function NavBar() {
               Dashboard
             </Link>
           )}
+          {user && user.role !== "employer" && (
+            <Link
+              href={"/frontend/cv"}
+              className="px-3 mx-4 text-base font-medium transition-all duration-700 hover:translate-y-2 uppercase"
+            >
+              Create CV
+            </Link>
+          )}
           <Link
             href={"/"}
             className="px-3 mx-4 text-base font-medium transition-all duration-700 hover:translate-y-2 uppercase"

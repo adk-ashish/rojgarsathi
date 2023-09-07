@@ -4,17 +4,14 @@ import Cookies from "js-cookie";
 
 export const post_job = async (formData) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/postAJob`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("token")}`,
-        },
-        body: JSON.stringify(formData),
+    const res = await fetch("/api/job/postAJob", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Cookies.get("token")}`,
       },
-    );
+      body: JSON.stringify(formData),
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -25,15 +22,12 @@ export const post_job = async (formData) => {
 // get job api
 export const get_job = async () => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getAllJobs`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${Cookies.get("token")}`,
-        },
+    const res = await fetch("/api/job/getAllJobs", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${Cookies.get("token")}`,
       },
-    );
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -44,13 +38,10 @@ export const get_job = async () => {
 // get specified job api
 export const get_specified_job = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getSpecifiedJob?id=${id}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${Cookies.get("token")}` },
-      },
-    );
+    const res = await fetch(`/api/job/getSpecifiedJob?id=${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -62,14 +53,11 @@ export const get_specified_job = async (id) => {
 
 export const apply_job = async (formData) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/applyJob`,
-      {
-        method: "POST",
-        headers: { Authorization: `Bearer ${Cookies.get("token")}` },
-        body: formData,
-      },
-    );
+    const res = await fetch("/api/job/applyJob", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+      body: formData,
+    });
     const data = await res.json();
     return data;
   } catch (error) {
@@ -81,13 +69,10 @@ export const apply_job = async (formData) => {
 
 export const get_my_applied_job = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getAppliedJobs?id=${id}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${Cookies.get("token")}` },
-      },
-    );
+    const res = await fetch(`/api/job/getAppliedJobs?id=${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -99,13 +84,10 @@ export const get_my_applied_job = async (id) => {
 
 export const get_my_posted_job = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getPostedJobs?id=${id}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${Cookies.get("token")}` },
-      },
-    );
+    const res = await fetch(`/api/job/getPostedJobs?id=${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -118,7 +100,7 @@ export const get_my_posted_job = async (id) => {
 export const get_all_applications = async (id) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getAllApplicationsOfSpecifiedJob?id=${id}`,
+      `/api/job/getAllApplicationsOfSpecifiedJob?id=${id}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${Cookies.get("token")}` },
@@ -138,17 +120,14 @@ export const get_all_applications = async (id) => {
 
 export const change_application_status = async (formData) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/responseOfApplication`,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("token")}`,
-        },
-        body: JSON.stringify(formData),
+    const res = await fetch("/api/job/responseOfApplication", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Cookies.get("token")}`,
       },
-    );
+      body: JSON.stringify(formData),
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -161,13 +140,10 @@ export const change_application_status = async (formData) => {
 
 export const get_application_details = async (id) => {
   try {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/job/getApplicationDetail?id=${id}`,
-      {
-        method: "GET",
-        headers: { Authorization: `Bearer ${Cookies.get("token")}` },
-      },
-    );
+    const res = await fetch(`/api/job/getApplicationDetail?id=${id}`, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+    });
     const data = res.json();
     return data;
   } catch (error) {
@@ -175,5 +151,19 @@ export const get_application_details = async (id) => {
       "error in   getting my all application of specified jobs (service) => ",
       error,
     );
+  }
+};
+
+export const create_cv = async (formData) => {
+  try {
+    const res = await fetch("/api/job/createCV", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${Cookies.get("token")}` },
+      body: formData,
+    });
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log("error in creating CV (service) => ", error);
   }
 };
