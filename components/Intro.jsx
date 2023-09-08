@@ -16,7 +16,7 @@ export default function Intro() {
     e.preventDefault();
     const filteredJobs = jobData?.filter((job) => {
       let x = job?.job_category;
-      return x?.toUpperCase() === search?.toUpperCase().trim();
+      return x?.toUpperCase().includes(search?.toUpperCase().trim());
     });
     setFilteredJobs(filteredJobs);
     setDoneSearch(true);
