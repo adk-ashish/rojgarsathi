@@ -24,10 +24,6 @@ const ApplyJobSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    cv: {
-      type: String,
-      required: true,
-    },
     status: {
       type: String,
       default: "pending",

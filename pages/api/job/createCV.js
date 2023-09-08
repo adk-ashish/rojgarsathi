@@ -1,6 +1,7 @@
 import ConnectDB from "@/DB/connectDB";
 import Joi from "joi";
 import CV from "@/models/CV";
+import User from "@/models/User";
 import formidable from "formidable";
 import validateToken from "@/middleware/tokenValidation";
 
@@ -71,7 +72,10 @@ const createCV = async (req, res) => {
           message: error.details[0].message.replace(/['"]+/g, ""),
         });
 
-      await CV.create(cvfields);
+      const u = await User.findOne({ _id: user });
+      const cv = await CV.create(cvfields);
+      u.cv = cv._id;
+      await u.save();
       return res.status(200).json({
         success: true,
         message: "CV created successfully !",

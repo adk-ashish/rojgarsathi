@@ -38,11 +38,11 @@ export default function ApplicationsDetail() {
       ) : (
         <>
           <NavBar />
-          <div className="w-full px-4 flex flex-wrap  pt-20 ">
+          <div className="w-full px-4 flex flex-wrap  pt-20 justify-center items-center">
             <div className="w-full h-32 bg-gray-50 text-indigo-600 font-bold flex items-center justify-center flex-col">
               <h1 className="text-3xl">Application Detail</h1>
             </div>
-            <div className="flex flex-col md:flex-row justify-center md:justify-around items-center w-full h-32 px-4">
+            <div className="flex flex-col self-center max-w-sm w-full rounded overflow-hidden shadow-lg">
               <div className="flex py-2">
                 <h1 className="text-base font-semibold px-2 ">Name</h1>
                 <p className="text-sm px-2">{data?.data?.name}</p>
@@ -50,6 +50,42 @@ export default function ApplicationsDetail() {
               <div className="flex py-2">
                 <h1 className="text-base font-semibold px-2 ">Email</h1>
                 <p className="text-sm px-2">{data?.data?.email}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">Summary</h1>
+                <p className="text-sm px-2">{data?.data?.user.cv.summary}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">See Grade</h1>
+                <p className="text-sm px-2">{data?.data?.user.cv.seeGrade}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">
+                  Undergraduate Grade
+                </h1>
+                <p className="text-sm px-2">{data?.data?.user.cv.undergrad}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">
+                  Graduate Grade
+                </h1>
+                <p className="text-sm px-2">{data?.data?.user.cv.graduate}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">Skills</h1>
+                <p className="text-sm px-2">
+                  {data?.data?.user.cv.programmingSkills}
+                </p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">Hobbies</h1>
+                <p className="text-sm px-2">{data?.data?.user.cv.hobbies}</p>
+              </div>
+              <div className="flex py-2">
+                <h1 className="text-base font-semibold px-2 ">Experience</h1>
+                <p className="text-sm px-2">
+                  {data?.data?.user.cv.experienceYears} years
+                </p>
               </div>
               <div className="flex py-2">
                 <h1 className="text-base font-semibold px-2 ">
